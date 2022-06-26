@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Chat Uol</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="estilos.css">
+    </head>
+    <body>
+        <div class="entrada">
+            <img src="./midia/logo.png" />
+            <div class="logar">
+                <input type="text" placeholder="Digite seu nome" onkeypress="entrarComEnter(event)"/>
+                <div class="entrar" onclick="entrar();">Entrar</div>
+            </div>
+            <div class="carregar invisivel">
+                <img src="./midia/pokeball.gif" />
+                <p>
+                    Entrando...
+                </p>
+            </div>
+            
+        </div>
+        <div class="chat invisivel">
+            <div class="topo">
+                <img src="./midia/logo.png" />
+                <ion-icon name="people" onclick="mostrarContatos();"></ion-icon>
+            </div>
+
+            <div class="content">
+
+
+                <ul>
+                    <li class="entrouSaiu">
+                        <span class="time">(09:00:28)</span>
+                        <span class="nome"> Fulano </span>
+                        <span> entrou na sala....</span>
+                    </li>
+
+                    <li class="mensagem">
+                        <span class="time">(09:00:28)</span>
+                        <span class="nome">Fulano</span>
+                        <span> para </span>
+                        <span class="nome">Ciclano: </span>
+                        <span> fofocas....</span>
+                    </li>
+
+                    <li class="entrouSaiu">
+                        <span class="time">(09:00:28)</span>
+                        <span class="nome"> Maria </span>
+                        <span> saiu da sala....</span>
+                    </li>
+                
+
+                </ul>
+    
+            </div>
+
+            <div class="escrevaAqui">
+
+                <div>
+                    <input type="text" placeholder="Escreva aqui ..." onkeypress="enviarComEnter(event)" />
+                    <p>Enviando para 
+                        <span class="contatoAEnviar">Todos</span> 
+                        <span class="modoDeEnvio"></span>
+                    </p>
+
+
+                </div>
+                <ion-icon name="paper-plane-outline" onclick="enviarMsg();"></ion-icon>
+            </div>
+
+
+
+
+            <div class="selecionarContato mostrarContatos">
+                <p>Escolha um contato para enviar mensagem:</p>
+                <ul>
+                    
+                    
+                </ul>
+                <p>Escolha a visibilidade</p>
+                <ul>
+                    <li class="selecionado" onclick='selecionarReservado(this);'>
+                        <div>
+                            <ion-icon name="lock-open"></ion-icon>
+                            <span>Público</span>
+                        </div>
+                        <div class="check">
+                            <ion-icon name="checkmark"></ion-icon>
+                        </div>
+                        
+
+                    </li>
+                    <li onclick='selecionarReservado(this);'>
+                        <div>
+                            <ion-icon name="lock-closed" ></ion-icon>
+                            <span>Reservadamente</span>
+                        </div>    
+                        <div class="check">
+                            <ion-icon name="checkmark"></ion-icon>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="divcinza" onclick="ocultarContatos();">
+
+            </div>
+
+
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+        <script src="script.js"></script>
+
+    </body>
+</html>
